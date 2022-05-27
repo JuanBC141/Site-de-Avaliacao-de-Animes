@@ -1,0 +1,19 @@
+body{
+    background-color: #e5e5e5;
+}
+
+.nav-extended{
+    background-image: url("imagens/capa.jpg");
+    background-size: cover;
+    
+}
+
+nav ul li.active, .tab a.active{
+    border-bottom: solid 2px #fff;
+ 
+}
+
+
+
+
+
