@@ -50,4 +50,11 @@ class AnimesController{
         header('Content-type: application/json');
         echo json_encode($result);
     }
+
+    public function delete(int $id){
+        $animesRepository = new AnimesRepositoryPDO();
+        $result = ['success' => $animesRepository->delete($id)];
+        header('Content-type: application/json');
+        echo json_encode($result);
+    }
 }

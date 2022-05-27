@@ -3,6 +3,7 @@
 $bd = new SQLite3("animes.db");
 
 $sql = "DROP TABLE IF EXISTS animes";
+
 if ($bd->exec($sql))
     echo "\ntabela filmes apagada\n";
 
@@ -11,7 +12,7 @@ $sql = "CREATE TABLE animes (
     titulo VARCHAR(200) NOT NULL,
     poster VARCHAR(200),
     sinopse TEXT,
-    nota DECIMAL(2.1)
+    nota DECIMAL(3.1),
 )";
 
 if ($bd->exec($sql))
