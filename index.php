@@ -43,5 +43,10 @@ if($rota === "/vixe"){
   require_once "view/safado.php";
   exit();
 }
+
+if($rota === "/fav"){
+  require_once "view/favoritos.php";
+  exit();
+}
 require_once "view/404.php";
 
