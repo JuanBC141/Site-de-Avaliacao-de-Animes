@@ -35,9 +35,9 @@ class AnimesController{
     private function savePoster($file){
         $posterDir = "imagens/posters/";//Dir = Diretório
         $posterPath = $posterDir . basename($file["poster_file"]["name"]);//Path = Caminho
-        //Basename tira tudo do diretorio do tipo errante e retorna apenas o nome do arquivo
-        $posterTmp = $file["poster_file"]["tmp_name"];
-        if (move_uploaded_file($posterTmp, $posterPath)){
+        //basename — Retorna apenas a parte que corresponde ao nome do arquivo de um caminho/path
+        $posterTmp = $file["poster_file"]["tmp_name"];//tmp de temporario
+        if (move_uploaded_file($posterTmp, $posterPath)){ //Move_uploaded_file move os arquivos o local requerido
             return $posterPath;
         }else{
          return false;   
@@ -53,7 +53,7 @@ class AnimesController{
 
     public function delete(int $id){
         $animesRepository = new AnimesRepositoryPDO();
-        $result = ['success' => $animesRepository->delete($id)];
+        $result = ['success' => $animesRepository->delete($id)];//atributo 'sucess' 
         header('Content-type: application/json');
         echo json_encode($result);
     }

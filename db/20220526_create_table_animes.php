@@ -5,7 +5,7 @@ $bd = new SQLite3("animes.db");
 $sql = "DROP TABLE IF EXISTS animes";
 
 if ($bd->exec($sql))
-    echo "\ntabela filmes apagada\n";
+    echo "\ntabela animes apagada\n";
 
 $sql = "CREATE TABLE animes ( 
     id INTEGER PRIMARY KEY AUTOINCREMENT,

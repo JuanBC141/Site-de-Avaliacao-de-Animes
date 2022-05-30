@@ -36,7 +36,7 @@ $animes = $controller->index();
     <div class="container">
         <div class="row">
 
-            <?php if (!$animes) echo"<p class='card-panel red lighten-4'>Nenhum filme cadastrado</p>"?>
+            <?php if (!$animes) echo"<p class='card-panel red lighten-4'>Nenhum anime cadastrado</p>"?>
 
             <?php foreach($animes as $anime) :?>
             <div class="col s7 m4 l4 xl3">
@@ -83,6 +83,7 @@ $animes = $controller->index();
                 .then(response => { //quando eu tiver a conversão
                     if (response.success === "ok") { // verifica se atrib success é ok
                         if (btn.querySelector("i").innerHTML === "favorite") {
+                            //innerHTML define ou obtém a sintaxe HTML ou XML descrevendo os elementos descendentes.
                             btn.querySelector("i").innerHTML =
                                 "favorite_border" // se for ok faz troca
                         } else {
@@ -106,7 +107,7 @@ $animes = $controller->index();
           .then(response => response.json())
           .then(response => {
             if (response.success === "ok") {
-              const card = btn.closest(".col")
+              const card = btn.closest(".col")// retorna o ancestral mais próximo, em relação ao elemento atual
               card.classList.add("fadeOut")//vai até as class existentes e add a fadeout
               setTimeout(() => card.remove(), 1000)//progamamos que o card se apague depois de um segundo
             }

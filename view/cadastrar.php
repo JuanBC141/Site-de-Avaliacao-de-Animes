@@ -57,7 +57,7 @@
 
                         <!-- Capa -->
                         <div class="file-field input-field">
-                            <div class="btn grey darken-4">
+                            <div class="btn red">
                                 <span>Capa</span>
                                 <input type="file" name="poster_file">
                             </div>
@@ -69,7 +69,7 @@
 
                         <!-- Botões -->
                         <div class="card-action">
-                            <a class="waves-effect waves-light btn grey" href="/">Cancelar</a>
+                            <a class="waves-effect waves-light btn red" href="/">Cancelar</a>
                             <button type="submit" href="#" class="waves-effect waves-light btn black">Salvar</button>
                         </div>
                         <!-- Botões -->
