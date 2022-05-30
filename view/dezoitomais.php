@@ -1,6 +1,6 @@
 <?php include "cabecalho.php" ?>
 
-<body>
+<body background="../imagens/animini.jpg">
     <div class="row">
 
         <div class="col s6 offset-s3">
