@@ -11,7 +11,7 @@ class AnimesController{
     }
 
     public function save($request){// Save recebe os dados para inserir no bd
-
+                            //request = solicitação
         $animesRepository = new AnimesRepositoryPDO(); //Cria o repositorio
 
         //Recebe todos dados do form, e guarda no obj anime
@@ -22,8 +22,7 @@ class AnimesController{
             $anime->poster = $upload;
         }
 
-        
-        
+    
         if ($animesRepository->salvar($anime))
             $_SESSION["msg"] = "Anime cadastrado com sucesso";
         else
@@ -37,7 +36,7 @@ class AnimesController{
         $posterPath = $posterDir . basename($file["poster_file"]["name"]);//Path = Caminho
         //basename — Retorna apenas a parte que corresponde ao nome do arquivo de um caminho/path
         $posterTmp = $file["poster_file"]["tmp_name"];//tmp de temporario
-        if (move_uploaded_file($posterTmp, $posterPath)){ //Move_uploaded_file move os arquivos o local requerido
+        if (move_uploaded_file($posterTmp, $posterPath)){ //$postertmp vai ser movido para o $posterPath
             return $posterPath;
         }else{
          return false;   
@@ -46,7 +45,7 @@ class AnimesController{
 
     public function favorite($id){
         $animesRepository = new AnimesRepositoryPDO();
-        $result = ['success' => $animesRepository->favoritar($id)];
+        $result = ['success' => $animesRepository->favoritar($id)];//atributo 'sucess' 
         header('Content-type: application/json');
         echo json_encode($result);
     }

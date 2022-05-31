@@ -103,10 +103,10 @@ $animes = $controller->index();
       btn.addEventListener("click", e => {
         const id = btn.getAttribute("data-id")
         const requestConfig = { method: "DELETE", headers: new Headers()}
-        fetch(`/animes/${id}`, requestConfig)
-          .then(response => response.json())
-          .then(response => {
-            if (response.success === "ok") {
+        fetch(`/animes/${id}`, requestConfig)//faço uma solicitação delete
+          .then(response => response.json())//quando eu tiver a resposta, convert pra json
+          .then(response => {//quando eu tiver a conversão
+            if (response.success === "ok") {// verifica se atrib success é ok
               const card = btn.closest(".col")// retorna o ancestral mais próximo, em relação ao elemento atual
               card.classList.add("fadeOut")//vai até as class existentes e add a fadeout
               setTimeout(() => card.remove(), 1000)//progamamos que o card se apague depois de um segundo

@@ -18,13 +18,15 @@ if($rota === "/novo"){
   };
   exit();
 }
-
+  
+//Vamos pegar um pedaço da string pra ver se realmente é deletar//Substr pega uma parte da string
 if(substr($rota,0,strlen("/favoritar")) === "/favoritar"){//substr Retorna uma parte de uma string
   $controller = new AnimesController();
   $controller->favorite(basename($rota));
   exit();
 }
 
+   //Vamos verificar se a qntd de caracteres é igual a animes//Substr pega uma parte da string
 if (substr($rota, 0, strlen("/animes")) === "/animes") {
     if($metodo == "GET") require "view/galeria.php";
     if($metodo == "DELETE"){
